@@ -69,4 +69,25 @@ void loop() {
 
   one = "Cucumber";
   two = "Cucuracha";
+  if (one.compareTo(tow) < 0) {
+    Serial.println(one + " comes before " + two);
+  } else {
+    Serial.println(one + " comes after " + two);
+  }
+
+  delay(10000);
+
+  while (true) {
+    one = "Sensor: ";
+    two = "Sensor" ";
+
+    one += analogRead(A0);
+    two += analogRead(A5);
+
+    if (one.compareTo(two) < 0) {
+      Serial.println(one + " comes before " + two);
+    } else {
+      Serial.println(one + " comes after " + two);
+    }
+  }
 }
