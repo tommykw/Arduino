@@ -23,5 +23,5 @@ void loop() {
     Serial.println(". This reading is not divisible by ten");
   }
 
-  // not implements
+  while (true);
 }
