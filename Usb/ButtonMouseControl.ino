@@ -25,5 +25,22 @@ void loop() {
   int leftState = digitalRead(leftButton);
   int clickState = digitalRead(mouseButton);
 
-  // not implements
+  int xDistance = (leftState - rightState) * range;
+  int yDistance = (upState - downState) * range;
+
+  if ((xDistance != 0) || (yDistance != 0)) {
+    Mouse.move(xDistance, yDistance, 0);
+  }
+
+  if (clickState == HIGH) {
+    if (!Mouse.isPressed(MOUSE_LEFT)) {
+      Mouse.press(MOUSE_LEFT);
+    }
+  } else {
+    if (Mouse.isPressed(MOUSE_LEFT)) {
+      Mouse.release(MOUSE_LEFT);
+    }
+  }
+
+  delay(responseDelay);
 }
