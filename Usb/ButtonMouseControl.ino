@@ -19,5 +19,11 @@ void setup() {
 }
 
 void loop() {
+  int upState = digitalRead(upButton);
+  int downState = digitalRead(downButton);
+  int rightState = digitalRead(rightButton);
+  int leftState = digitalRead(leftButton);
+  int clickState = digitalRead(mouseButton);
+
   // not implements
 }
