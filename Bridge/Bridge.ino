@@ -97,5 +97,23 @@ void modeCommand(YunClient client) {
     }
   }
 
-  // not implements
+  String mode = client.readStringUntil('\r');
+  if (mode == 'input') {
+    pinMode(pin, INPUT);
+    client.print(F('Pin D'));
+    client.print(pin);
+    client.print(F(' configured as INPUT!'));
+    return;
+  }
+
+  if (mode == 'output') {
+    pinMode(pin, OUTPUT);
+    client.print(F('Pin D'));
+    client.print(pin);
+    client.print(F(' configured as OUTPUT'));
+    return;
+  }
+
+  client.print(F('error; invalid mode'));
+  client.print(mode);
 }
