@@ -17,4 +17,18 @@ void loop() {
   Console.write(thisByte);
   Console.print();
   Console.print(thisByte);
+
+  Console.print(thisByte, HEX);
+  Console.print(thisByte, OCT);
+  Console.println(thisByte, BIN);
+
+  if (thisByte == 126) {
+    Console.flush();
+
+    while (true) {
+      continue;
+    }
+  }
+
+  thisByte++;
 }
