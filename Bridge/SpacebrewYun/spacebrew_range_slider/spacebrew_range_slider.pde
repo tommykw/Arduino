@@ -52,3 +52,36 @@ void draw() {
   rect(currentDistance, (height / 2) + 5, 20, (height / 2) - 10);
 }
 
+void mousePressed() {
+  // Leaving 20 pixels at the end prevents the slider from going off the screen
+  if (mouseX >= 0 && mouseX <= width - 20) {
+    currentDistance = mouseX;
+    c.send("currentDistance", currentDistance);
+  }
+}
+
+void mouseDragged() {
+  // Leaving 20 pixels at the end prevents the slider from going off the screen
+  if (mouseX >= 0 && mouseX <= width - 20) {
+    currentDistance = mouseX;
+    c.send("currentDistance", currentDistance);
+  }
+}
+
+void onRangeMessage(String name, int value) {
+  println("got int message " + name + " : " + value);
+  if (name.equals("currentDistance") == true) {
+    if (value >= 0 && value <= 1023) {
+      currentDistance = value;
+    }
+  }
+}
+
+void onBooleanMessage(String name, boolean value) {
+  println("got bool message " + name + " ; " + value);
+}
+
+void onStringMessage(String name, boolean value) {
+  println("got string message " + name + " ; " + value);
+}
+
