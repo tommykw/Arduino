@@ -60,5 +60,13 @@ void onRangeMessage(String name, int value) {
 }
 
 void onBooleanMessage(String name, boolean value) {
-
+  println("got bool message " + name + " : " + value);
 }
+
+void onStringMessage(String name, String value) {
+  println("got string message " + name + " : " + value);
+  if (name.equals("text") == true) {
+    currentText = value;
+  }
+}
+
