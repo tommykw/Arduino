@@ -1,4 +1,4 @@
-import spacebrew.*;                                                                               
+import spacebrew.*;
 
 String server="sandbox.spacebrew.cc";
 String name="givemeabettername";
